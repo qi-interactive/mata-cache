@@ -32,7 +32,7 @@ class Bootstrap implements BootstrapInterface {
 		if (is_a($model, "mata\keyvalue\models\KeyValue"))
 			return;
 		
-		$kv = KeyValue::find(\matacms\cache\Module::KV_LAST_MATA_UPDATE_KEY)->one();
+		$kv = KeyValue::find()->where(["Key" => \matacms\cache\Module::KV_LAST_MATA_UPDATE_KEY])->one();
 
 		if ($kv == null) {
 			$kv = new KeyValue();
