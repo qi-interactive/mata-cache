@@ -6,12 +6,9 @@
     "license": "MIT",
     "support": {
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "codeception/codeception": "*",
-        "yiisoft/yii2-codeception": "*",
-        "yiisoft/yii2-faker": "*",
-        "mata/mata-key-value": "*"
+        "mata/mata-key-value": "~1.0.1.alpha"
     },
     "autoload": {
         "psr-4": {

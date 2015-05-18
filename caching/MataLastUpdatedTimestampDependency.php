@@ -1,8 +1,9 @@
 <?php
+ 
 /**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
+ * @link http://www.matacms.com/
+ * @copyright Copyright (c) 2015 Qi Interactive Limited
+ * @license http://www.matacms.com/license/
  */
 
 namespace matacms\cache\caching;
@@ -11,15 +12,7 @@ use Yii;
 use yii\caching\Dependency;
 use mata\keyvalue\models\KeyValue;
 use yii\db\Query;
-/**
- * FileDependency represents a dependency based on a file's last modification time.
- *
- * If th last modification time of the file specified via [[fileName]] is changed,
- * the dependency is considered as changed.
- *
- * @author Qiang Xue <qiang.xue@gmail.com>
- * @since 2.0
- */
+
 class MataLastUpdatedTimestampDependency extends Dependency {
 
 	private static $lastTimestamp;
