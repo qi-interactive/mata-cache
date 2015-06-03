@@ -1,0 +1,6 @@
+{
+    "name": "MATACMS Cache",
+    "description": "Cache management for MATA CMS",
+    "icon" : "/images/module-icon.svg",
+    "version" : "1.0.0-alpha"
+}

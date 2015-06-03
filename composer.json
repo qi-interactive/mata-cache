@@ -1,0 +1,21 @@
+{
+    "name": "matacms/matacms-cache",
+    "description": "Manages cache for MATA CMS",
+    "keywords": ["yii2", "mata-cms-cache", "cache", "mata"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "support": {
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "mata/mata-key-value": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "matacms\\cache\\": ""
+        }
+    },
+     "extra": {
+        "bootstrap": "matacms\\cache\\Bootstrap"
+    }
+}

@@ -1,24 +1,28 @@
-{
-    "name": "matacms/matacms-cache",
-    "description": "Manages cache for MATA CMS",
-    "keywords": ["yii2", "mata-cms-cache", "cache", "mata"],
-    "type": "yii2-extension",
-    "license": "MIT",
-    "support": {
-    },
-    "minimum-stability": "dev",
-    "require": {
-        "codeception/codeception": "*",
-        "yiisoft/yii2-codeception": "*",
-        "yiisoft/yii2-faker": "*",
-        "asofter/yii2-imperavi-redactor": "dev-master"
-    },
-    "autoload": {
-        "psr-4": {
-            "matacms\\cache\\": ""
-        }
-    },
-     "extra": {
-        "bootstrap": "matacms\\cache\\Bootstrap"
-    }
-}
+MATA CMS Cache
+==========================================
+
+![MATA CMS Module](https://s3-eu-west-1.amazonaws.com/qi-interactive/assets/mata-cms/gear-mata-logo%402x.png)
+
+
+MATA CMS Cache module adds caching dependency.
+
+
+Installation
+------------
+
+- Add the application using composer: 
+
+```json
+"matacms/matacms-cache": "~1.0.0"
+```
+
+Changelog
+---------
+
+## 1.0.1-alpha, June 3, 2015
+
+- Updated the logic in Bootstrap to update the \matacms\cache\Module::KV_LAST_MATA_UPDATE_KEY only once per request
+
+## 1.0.0-alpha, May 18, 2015
+
+- Initial release.
