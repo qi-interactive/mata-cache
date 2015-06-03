@@ -12,8 +12,11 @@ use yii\base\BootstrapInterface;
 use yii\base\Event;
 use yii\db\BaseActiveRecord;
 use mata\keyvalue\models\KeyValue;
+use yii\base\Application;
 
 class Bootstrap implements BootstrapInterface {
+
+	static $shouldUpdate = false;
 
 	public function bootstrap($app) {
 
@@ -21,22 +24,24 @@ class Bootstrap implements BootstrapInterface {
 			return;
 
 		Event::on(BaseActiveRecord::className(), BaseActiveRecord::EVENT_AFTER_INSERT, function($event) {
-			$this->updateLastModifiedDate($event->sender);
+			self::$shouldUpdate = true;
 		});
 
 		Event::on(BaseActiveRecord::className(), BaseActiveRecord::EVENT_AFTER_UPDATE, function($event) {
-			$this->updateLastModifiedDate($event->sender);
+			self::$shouldUpdate = true;
 		});
 
 		Event::on(BaseActiveRecord::className(), BaseActiveRecord::EVENT_AFTER_DELETE, function($event) {
-			$this->updateLastModifiedDate($event->sender);
+			self::$shouldUpdate = true;
+		});
+
+		Event::on(Application::className(), Application::EVENT_AFTER_REQUEST, function($event) {
+			if (self::$shouldUpdate)
+				$this->updateLastModifiedDate();
 		});
 	}
 
-	private function updateLastModifiedDate(BaseActiveRecord $model) {
-
-		if (is_a($model, "mata\keyvalue\models\KeyValue"))
-			return;
+	private function updateLastModifiedDate() {
 		
 		$kv = KeyValue::find()->where(["Key" => \matacms\cache\Module::KV_LAST_MATA_UPDATE_KEY])->one();
 
