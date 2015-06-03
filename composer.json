@@ -6,9 +6,9 @@
     "license": "MIT",
     "support": {
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
-        "mata/mata-key-value": "dev-master"
+        "mata/mata-key-value": "~1.0.1-alpha"
     },
     "autoload": {
         "psr-4": {
