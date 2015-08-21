@@ -10,7 +10,7 @@ MATA CMS Cache module adds caching dependency.
 Installation
 ------------
 
-- Add the application using composer: 
+- Add the application using composer:
 
 ```json
 "matacms/matacms-cache": "~1.0.0"
@@ -18,6 +18,10 @@ Installation
 
 Changelog
 ---------
+
+## 1.0.2-alpha, August 21, 2015
+
+- Updated dependency on mata-key-value specific version
 
 ## 1.0.1-alpha, June 3, 2015
 
